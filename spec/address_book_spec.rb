@@ -137,4 +137,15 @@ RSpec.describe AddressBook do
     end
   end
 
+  describe "#cleared_entries" do
+    it "will empty the entries array" do
+      book.import_from_csv("entries.csv")
+      book_size = book.entries.size
+
+      expect(book_size).to eq 5
+      book.clear_entries
+      book_size = book.entries.size
+      expect(book_size).to eq 0
+    end
+  end
 end

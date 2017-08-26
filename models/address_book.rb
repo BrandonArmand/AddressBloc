@@ -47,4 +47,8 @@ class AddressBook
     end
     return nil
   end
+
+  def clear_entries
+    @entries = []
+  end
 end
